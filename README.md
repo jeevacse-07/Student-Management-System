@@ -138,38 +138,10 @@ If your project contains additional entities such as **Department, Course, or At
 
 ### Home Page
 
-Add your screenshot here:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4b49dd7a-5123-4c45-9195-3577e3a30834" />
 
-```text
-![Home Page](screenshots/home-page.png)
-```
 
-### Add Student Page
 
-```text
-```
-
-### Student List
-
-```text
-![Student List](screenshots/student-list.png)
-```
-
-### Update Student
-
-```text
-![Update Student](screenshots/update-student.png)
-```
-
-### Delete Student
-
-```text
-![Delete Student](screenshots/delete-student.png)
-```
-
-Create a folder named `screenshots` in your project and place the corresponding images inside it.
-
----
 
 ## 8. API Endpoint Documentation
 
