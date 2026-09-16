@@ -1,0 +1,6 @@
+{
+  "name": "Student Record Management System",
+  "description": "Full-stack CRUD web application with REST API endpoints, database schema, data validation, and testing suites built following standard operating procedures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
