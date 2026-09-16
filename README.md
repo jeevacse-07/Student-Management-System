@@ -8,7 +8,7 @@ The **Student Management System** is a web-based application designed to manage 
 
 The system helps reduce manual data management and provides an organized way to maintain student details.
 
-**Website:** http://127.0.0.1:5500/
+**Website:https://ais-dev-zzedhwhlzax7xkvwvul5fp-77895725568.asia-southeast1.run.app
 
 ---
 
