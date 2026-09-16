@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student management dashboard with CRUD operations." />
+  <title>Student Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span><span>Student<span class="brand-accent">Hub</span></span></div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <a class="nav-item active" href="#students"><span class="nav-icon">▦</span> Students</a>
+        <a class="nav-item" href="#overview"><span class="nav-icon">◒</span> Overview</a>
+        <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span> Settings</a>
+      </nav>
+      <div class="sidebar-footer"><span class="status-dot"></span><span>Local workspace</span></div>
+    </aside>
+
+    <main class="main-content" id="students">
+      <header class="topbar">
+        <div><p class="eyebrow">Academic operations</p><h1>Students</h1></div>
+        <button class="primary-button" id="addStudentButton"><span>＋</span> Add student</button>
+      </header>
+
+      <section class="stats-grid" aria-label="Student statistics">
+        <article class="stat-card"><div class="stat-icon blue">♙</div><div><p>Total students</p><strong id="totalStudents">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon green">✓</div><div><p>Active students</p><strong id="activeStudents">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon amber">⌁</div><div><p>Departments</p><strong id="departmentCount">0</strong></div></article>
+        <article class="stat-card"><div class="stat-icon coral">↗</div><div><p>Average year</p><strong id="averageYear">0.0</strong></div></article>
+      </section>
+
+      <section class="content-panel">
+        <div class="panel-heading"><div><h2>Student directory</h2><p>Manage enrolment records and keep your campus data current.</p></div><span class="record-count" id="recordCount">0 records</span></div>
+        <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search by name, email or ID" /></label><select id="departmentFilter" aria-label="Filter by department"><option value="">All departments</option></select><select id="yearFilter" aria-label="Filter by year"><option value="">All years</option><option value="1">Year 1</option><option value="2">Year 2</option><option value="3">Year 3</option><option value="4">Year 4</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Student</th><th>Student ID</th><th>Department</th><th>Year</th><th>Status</th><th aria-label="Actions"></th></tr></thead><tbody id="studentTableBody"></tbody></table><div class="empty-state" id="emptyState"><div class="empty-icon">⌁</div><h3>No students found</h3><p>Try changing your search or add a new student record.</p><button class="secondary-button" id="emptyAddButton">Add first student</button></div></div>
+      </section>
+      <p class="footer-note">StudentHub · Data is stored locally in this browser for demonstration.</p>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-button" id="closeModal" aria-label="Close dialog">×</button><p class="eyebrow">Student record</p><h2 id="modalTitle">Add a student</h2><p class="modal-subtitle">Enter the details below to create a new directory record.</p><form id="studentForm" novalidate><input type="hidden" id="studentKey" /><div class="form-grid"><label>Full name<input id="studentName" name="name" placeholder="e.g. Ananya Rao" required /><span class="error-message" data-error="name"></span></label><label>Student ID<input id="studentId" name="studentId" placeholder="e.g. STU-1042" required /><span class="error-message" data-error="studentId"></span></label><label>Email address<input id="studentEmail" name="email" type="email" placeholder="student@campus.edu" required /><span class="error-message" data-error="email"></span></label><label>Phone number<input id="studentPhone" name="phone" type="tel" placeholder="10-digit phone number" required /><span class="error-message" data-error="phone"></span></label><label>Department<select id="studentDepartment" name="department" required><option value="">Select department</option><option>Computer Science</option><option>Business Administration</option><option>Mechanical Engineering</option><option>Design & Media</option><option>Life Sciences</option></select><span class="error-message" data-error="department"></span></label><label>Academic year<select id="studentYear" name="year" required><option value="">Select year</option><option value="1">Year 1</option><option value="2">Year 2</option><option value="3">Year 3</option><option value="4">Year 4</option></select><span class="error-message" data-error="year"></span></label></div><div class="form-actions"><button type="button" class="secondary-button" id="cancelButton">Cancel</button><button type="submit" class="primary-button">Save student</button></div></form></section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
